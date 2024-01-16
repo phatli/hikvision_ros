@@ -84,3 +84,16 @@ then begin calibration. After calibration you straightly press **commit** button
 #[ INFO] [1551582484.454296067]: [ hik_camera ] Write camera_info to ~/.ros/camera_info/hik_camera.yaml success.
 ```
 
+
+## docker
+Run following to start the hikvision_driver with docker
+
+```sh
+docker run -d --rm --name hikvision_driver --network=host phatli/hikvision:latest roslaunch hikvision_ros hik.launch ip_addr:={ip_addr} password:={psswd}
+```
+
+Replace `ip_addr` and `psswd` accordingly.
+To stop the driver, run
+```sh
+docker stop hikvision_driver
+```
